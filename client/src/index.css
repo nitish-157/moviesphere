@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark theme (the MovieSphere brand default - a cinema screening room) */
+html,
+html.dark {
+  --cine-bg: #0B0D12;
+  --cine-surface: #14171F;
+  --cine-surface2: #1B1F29;
+  --cine-border: #262B36;
+  --cine-gold: #D4A73A;
+  --cine-gold-soft: #E8C766;
+  --cine-text: #F5F5F0;
+  --cine-muted: #8A8F98;
+  --cine-danger: #E5484D;
+}
+
+/* Light theme - a bright lobby/matinee feel, same gold accent for continuity */
+html.light {
+  --cine-bg: #FAF9F6;
+  --cine-surface: #FFFFFF;
+  --cine-surface2: #F0EEE8;
+  --cine-border: #E2DED4;
+  --cine-gold: #B8860B;
+  --cine-gold-soft: #D4A73A;
+  --cine-text: #17181C;
+  --cine-muted: #6B6F76;
+  --cine-danger: #D92D3B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cine-bg);
+  color: var(--cine-text);
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Used on horizontally scrolling movie rows - keeps the scroll but hides the bar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
