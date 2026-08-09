@@ -11,12 +11,6 @@ A full-stack movie streaming UI built with the MERN stack — browse trending ti
 
 ---
 
-## Screenshots
-
-*(Add screenshots here — Home page, Movie Details, Admin Dashboard, and mobile view work well for a resume/portfolio README.)*
-
----
-
 ## Features
 
 ### User
