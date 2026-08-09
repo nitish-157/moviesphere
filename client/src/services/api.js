@@ -2,7 +2,9 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const api = axios.create({
-  baseURL: "/api", // Vite proxy forwards this to the backend in dev
+  // In local dev, "/api" is forwarded to localhost:5001 by the Vite proxy.
+  // In production, VITE_API_BASE_URL points straight at the deployed backend.
+  baseURL: import.meta.env.VITE_API_BASE_URL || "/api",
   headers: {
     "Content-Type": "application/json",
   },
