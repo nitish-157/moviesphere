@@ -18,9 +18,15 @@ connectDB();
 const app = express();
 
 // Core middleware
+// CLIENT_URL can be a comma-separated list, since Vercel gives a project
+// multiple valid domains (a git-linked one and an auto-generated one).
+const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173")
+  .split(",")
+  .map((url) => url.trim());
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: allowedOrigins,
     credentials: true,
   })
 );
